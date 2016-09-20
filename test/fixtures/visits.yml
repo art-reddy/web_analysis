@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  referrer: MyString
+  created_at: 2016-09-17 21:35:35
+  hash: MyString
+
+two:
+  url: MyString
+  referrer: MyString
+  created_at: 2016-09-17 21:35:35
+  hash: MyString

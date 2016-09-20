@@ -1,0 +1,6 @@
+development:
+  adapter: mysql2
+  database: web_analysis
+  user: root
+  password: adminpwd
+  host: localhost
