@@ -3,6 +3,7 @@
 Ruby on Rails & AngularJS application which works with dataset of page views for different URL's.
 
 It displays two statistic reports:
+
 1. Number of page views per URL, grouped by day, for the past 5 days;
 2. Top 5 referrers for the top 10 URLs grouped by day, for the past 5 days.
 
