@@ -1,24 +1,34 @@
-# README
+# Web Analysis App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails & AngularJS application which works with dataset of page views for different URL's.
 
-Things you may want to cover:
+It displays two statistic reports:
+1. Number of page views per URL, grouped by day, for the past 5 days;
+2. Top 5 referrers for the top 10 URLs grouped by day, for the past 5 days.
 
-* Ruby version
+Application uses RoR only to provide REST API. AngularJS client is independent and served by Gulp.
 
-* System dependencies
+## Installation Instructions
 
-* Configuration
+To run a REST API server you need Rails and MySQL installed.
 
-* Database creation
+*/client* folder contains Angular client. To run it you'll need Npm and Bower installed.
+```
+bundle install
+rails db:setup
+/cd client
+npm install
+bower install
+```
 
-* Database initialization
+Run application from */client* folder using
+```
+gulp serve:full-stack
+```
+or alternatively
+```
+rails server
+gulp serve
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Application will be running on http://localhost:3001.
