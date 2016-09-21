@@ -13,7 +13,7 @@ class Visit < Sequel::Model
             # Get top 5 referrers for every url
             top_records[date].each do |record|
                 record[:referrers] = DB[:visits]
-                                        .select(:referrer, Sequel.function(:count).*.as(:visits))
+                                        .select(:referrer___url, Sequel.function(:count).*.as(:visits))
                                         .where(Sequel.cast(:created_at, :date) => date, :url => record[:url])
                                         .exclude(:referrer => nil)
                                         .group(:referrer)
@@ -32,6 +32,7 @@ class Visit < Sequel::Model
                     .where(:created_at => (Date.today - 5)..Date.today)
                     .select_group(Sequel.cast(:created_at, :date).as(:date), :url)
                     .select_append(Sequel.function(:count).*.as(:visits))
+                    .order(:date).reverse
                     .all
 
         return records.group_by { |r| r.delete(:date) }

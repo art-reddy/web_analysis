@@ -1,8 +1,11 @@
 export class MainController {
   constructor (topUrlsProvider) {
     'ngInject';
-
     this.topUrls = topUrlsProvider.getTopUrls();
-    this.topReferrers = topUrlsProvider.getTopReferrers();
+
+    this.loadingText = 'Loading top URL\'s...';
+    this.topUrls.$promise.then(() => {
+      this.loadingText = null;
+    });
   }
 }

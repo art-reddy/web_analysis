@@ -1,15 +1,12 @@
-<div class="container">
-  <div ng-repeat="(date, urls) in main.topUrls" class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{date}}</h3>
-    </div>
-    <div class="panel-body">
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="record in urls | orderBy:'visits':true">
-          <span class="badge">{{record.visits}}</span>
-          {{record.url}}
-        </li>
-      </ul>
-    </div>
+{{main.loadingText}}
+<div ng-repeat="(date, urls) in main.topUrls" class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{date}}</h3>
   </div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="record in urls | orderBy:'visits':true">
+      <span class="badge">{{record.visits}} visits</span>
+      <b>{{record.url}}</b>
+    </li>
+  </ul>
 </div>

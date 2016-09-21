@@ -1,0 +1,18 @@
+{{referrers.loadingText}}
+<div ng-repeat="(date, urls) in referrers.topReferrers" class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{date}}</h3>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="record in urls | orderBy:'visits':true">
+      <span class="badge">{{record.visits}} visits</span>
+      <b>{{record.url}}</b>
+      <h5>Referrers:</h5>
+      <ul>
+        <li ng-repeat="referrer in record.referrers | orderBy:'visits':true">
+          {{referrer.url}}<span class="badge pull-right">{{referrer.visits}}</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
